@@ -10,7 +10,7 @@
         <tr *ngFor="let client of clientList">         
             <td>{{ client.nombre }}</td>
             <td>{{ client.edad }}</td>
-            <td></td>
+            <td> <button class="btn btn-sm" (click)="eliminar(client)">Eliminar</button> </td>
         </tr>
     </tbody>
 </table>
