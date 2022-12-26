@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Cliente</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Control</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let client of clientList">         
+            <td>{{ client.nombre }}</td>
+            <td>{{ client.edad }}</td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>

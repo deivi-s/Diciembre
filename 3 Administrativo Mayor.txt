@@ -1,0 +1,6 @@
+SELECT p.persona_id AS id,p.nombre, MAX(p.edad), g.nombre AS grupo, h.nombre AS hobbie FROM persona AS p
+INNER JOIN grupo AS g
+ON p.grupo_id = g.grupo_id
+INNER JOIN hobbie AS h
+ON h.hobbie_id = p.hobbie_id
+WHERE g.nombre = 'Administrativo'

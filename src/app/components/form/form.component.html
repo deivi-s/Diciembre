@@ -1,0 +1,28 @@
+<div class="container">
+   
+    <div class="offset-md-3 col-md-6">
+        <h1 class="pt-4 pb-4">Registro</h1>
+        <form [formGroup]="clientForm">
+            <div  class="form-group">
+                <label for="">Nombre</label>
+                <input type="email" class="form-control" formControlName="nombre">
+            </div>
+            <div class="form-group">
+                <label for="">Edad</label>
+                <input type="number" class="form-control" formControlName="edad">
+            </div>
+            <div class="form-group">
+                <label for="">Sexo</label>
+                <select  class="form-control" formControlName="sexo">
+                    <option value="M" selected>Masculino</option>
+                    <option value="F">Femenino</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="">Comentario</label>
+                <textarea class="form-control" cols="30" rows="10" formControlName="comentario"></textarea>
+            </div>
+            <button type="button" [disabled]="clientForm.invalid" class="btn btn-primary mt-3" (click)="enviar(clientForm.value)">Enviar</button>
+        </form>
+    </div>
+  </div>
