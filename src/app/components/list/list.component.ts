@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ListClientsService } from 'src/app/service/list-clients.service';
 
 @Component({
@@ -6,7 +6,9 @@ import { ListClientsService } from 'src/app/service/list-clients.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css']
 })
-export class ListComponent implements OnInit, OnChanges {
+export class ListComponent implements OnInit{
+
+  @Output() client = new EventEmitter<any>();
 
   clientList: any[] = [];
   constructor(private service: ListClientsService) {
@@ -18,11 +20,12 @@ export class ListComponent implements OnInit, OnChanges {
     })
   }
 
-  ngOnChanges(changes: SimpleChanges): void {
-    
+  eliminar(eliminar: any) {
+    this.clientList = [...this.clientList].filter( (key) => key !== eliminar);
   }
 
-  eliminar(eliminar: any) {
-    this.clientList = this.clientList.filter( (key) => key !== eliminar);
+  actualizar(cliente: any) {
+    
+    this.client.emit(cliente);
   }
 }

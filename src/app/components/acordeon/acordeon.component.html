@@ -3,12 +3,12 @@
 <ngb-accordion #acc="ngbAccordion">
 	<ngb-panel id="toggle-1" title="Formulario">		
 		<ng-template ngbPanelContent>
-			<app-form (clients)="getClients($event)"></app-form>
+			<app-form (clients)="getClients($event)" [dataClient]="client"></app-form>
 		</ng-template>
 	</ngb-panel>
 	<ngb-panel id="toggle-2" title="Lista Clientes">
 		<ng-template ngbPanelContent>
-			<app-list></app-list>
+			<app-list (client)="asignar($event)"></app-list>
 		</ng-template>
 	</ngb-panel>
 </ngb-accordion>

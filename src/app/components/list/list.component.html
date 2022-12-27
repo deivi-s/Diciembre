@@ -3,14 +3,17 @@
         <tr>
             <th scope="col">Cliente</th>
             <th scope="col">Edad</th>
+            <th scope="col">Sexo</th>
             <th scope="col">Control</th>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let client of clientList">         
+        <tr *ngFor="let client of clientList">
             <td>{{ client.nombre }}</td>
             <td>{{ client.edad }}</td>
-            <td> <button class="btn btn-sm" (click)="eliminar(client)">Eliminar</button> </td>
+            <td>{{ client.sexo }}</td>
+            <td> <button class="btn btn-sm btn-primary" (click)="eliminar(client)">Eliminar</button> <button
+                    class="btn btn-sm btn-secondary" (click)="actualizar(client)">Actualizar</button> </td>
         </tr>
     </tbody>
 </table>

@@ -9,12 +9,16 @@ import { ListClientsService } from 'src/app/service/list-clients.service';
 })
 export class AcordeonComponent {
   listClients: any[] = [];  
-
+  client: any;  
   constructor(private service : ListClientsService) {
 
   }
   getClients(client: any) {
     this.listClients.push(client);
     this.service.clients.next(this.listClients);
+  }
+
+  asignar(client: any){
+    this.client = client;
   }
 }
